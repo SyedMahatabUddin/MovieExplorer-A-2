@@ -1,5 +1,6 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router";
 export default function Header( {onSearch}) {
 
   const [searchValue,setSearchValue]=useState('')
@@ -19,12 +20,12 @@ export default function Header( {onSearch}) {
 
          {/* logo part */}
 
-   <a href="/" className="border border-gray-500 py-2 px-2 sm:px-4 rounded-xl ">
+   <Link to="/" className="border border-gray-500 py-2 px-2 sm:px-4 rounded-xl ">
    <span className="text-xl md:text-2xl">🎬</span>
    <span className="text-[16px] md:text-2xl font-bold bg-linear-to-r from-red-500 to-amber-500 bg-clip-text text-transparent">
    MovieExplorer</span>
 
-   </a>
+   </Link>
 
 
          {/*  Explore part */}
