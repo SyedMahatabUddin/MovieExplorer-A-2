@@ -2,6 +2,8 @@ import { Calendar, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Recently = () => {
+  
+  const [modal, setModal] =useState(false);
   const [loading, setLoading] = useState(true);
   const [show, setShow] = useState([]);
   const [visibleCount, setVisibleCount] = useState(12);
@@ -43,7 +45,7 @@ const Recently = () => {
           </div>
 
           <div className="px-1 space-y-2 border-gray-400 border py-2 rounded-b-lg">
-            <p className="">{user._embedded?.show?.name || user.name}</p>
+            <p className="font-semibold">{user._embedded?.show?.name || user.name}</p>
 
             <div className="flex justify-between">
               <p className="flex items-center gap-1 text-[14px]">
@@ -60,9 +62,39 @@ const Recently = () => {
               </p>
             </div>
 
-            <button className="mx-auto  block bg-red-400 my-2 py-1.5 px-4 rounded-xl">
+            <button onClick={()=> setModal(user.id) } className="mx-auto  block bg-red-400 my-2 py-1.5 px-4 rounded-xl">
               See Details
             </button>
+
+                    {modal=== user.id && (<div onClick={()=>setModal(false)} className="fixed inset-0 bg-black/50 flex items-center justify-center  px-4 z-50">
+          <div onClick={(e)=>e.stopPropagation()} className="w-full max-w-md bg-white shadow-2xl rounded-3xl overflow-hidden space-y-3 pb-6">
+          <div className="grid grid-cols-2">
+           <img className="row-span-1" src={user._embedded?.show.image?.medium} alt={`${user._embedded?.show.name} Poster Image`} />
+
+           <div className="row-span-1">
+
+           <h2 className="text-xl font-extrabold text-center my-2">{user._embedded?.show.name}</h2> 
+          <p><span className="font-semibold text-gray-800">Type:</span> {user._embedded?.show.type}</p>
+          <p><span className="font-semibold text-gray-800">Language:</span> {user._embedded?.show.language}</p>
+          <p><span className="font-semibold text-gray-800">Runtime:</span> {user._embedded?.show.runtime} min</p>
+          <p><span className="font-semibold text-gray-800">Rating:</span> {user._embedded?.show.rating?.average|| "N/A"}</p>
+           </div>
+
+
+          </div>
+          <p className="text-sm text-gray-700 w-full px-3 text-center">
+          {user._embedded?.show.summary?.replace(/<[^>]+>/g, "")|| "No summary available for this show yet."}
+        </p>
+
+           <button
+          onClick={() => setModal(false)}
+          className="mt-2 bg-red-500 text-white py-2 px-4 rounded-xl text-center mx-auto block w-30"
+        >
+          Close
+        </button>
+         </div>
+        </div> )}
+
           </div>
         </div>
       ))}
