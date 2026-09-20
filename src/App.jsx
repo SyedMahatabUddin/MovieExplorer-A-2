@@ -16,12 +16,12 @@ const router = createBrowserRouter([
 
      }]
   },
-]);
+],{ basename: "/MovieExplorer-A-2" });
 
 function Router() {
 
 return (
-      <RouterProvider router={router} />
+      <RouterProvider  router={router} />
   )
 }
 
