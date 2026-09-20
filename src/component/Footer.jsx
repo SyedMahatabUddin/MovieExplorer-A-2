@@ -1,3 +1,8 @@
+import facebookImg from "../assets/facebook.png";
+import instagramImg from "../assets/instagram.png";
+import redditImg from "../assets/reddit.png";
+
+
 export default function  Footer (){
 
     return (
@@ -8,13 +13,13 @@ export default function  Footer (){
             <p className="text-xl font-light  text-white">Follow Us On:</p>
             <div className=" flex gap-3">
               <a href="Facebook.com">
-                <img className="w-6"  src='/src/assets/facebook.png' ></img>
+                <img className="w-6"  src={facebookImg} ></img>
               </a>
               <a href="">
-               <img className="w-6"  src='/src/assets/instagram.png' ></img>
+               <img className="w-6"  src={instagramImg} ></img>
               </a>
               <a href="">
-                <img className="w-6"  src='/src/assets/reddit.png' ></img>
+                <img className="w-6"  src={redditImg} ></img>
               </a>
             </div>
           </div>
