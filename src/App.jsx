@@ -16,7 +16,7 @@ const router = createBrowserRouter([
 
      }]
   },
-],{ basename: "/MovieExplorer-A-2" });
+],{ basename: "import.meta.env.BASE_URL" });
 
 function Router() {
 
