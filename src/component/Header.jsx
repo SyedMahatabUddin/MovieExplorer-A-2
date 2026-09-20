@@ -1,13 +1,15 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
-export default function Header() {
+export default function Header( {onSearch}) {
 
   const [searchValue,setSearchValue]=useState('')
   const handleSearch = (e)=>{
-  const val = searchValue.trim()
-    console.log(val);
-    
     e.preventDefault()
+  const val = searchValue.trim()
+    if (onSearch) {
+      onSearch(val);
+    }
+    
   }
   return (
   

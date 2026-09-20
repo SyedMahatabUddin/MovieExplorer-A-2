@@ -2,6 +2,9 @@ import { Calendar, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const PopularData = () => {
+  const [modal, setModal] =useState(false);
+  console.log(modal);
+  
   const [loading, setLoading]= useState(true)
   const [show, setShow] = useState([]);
   const [visibleCount, setVisibleCount] = useState(12);
@@ -29,7 +32,7 @@ const PopularData = () => {
     <div className="w-full flex flex-col items-center">
 
      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
-{show.slice(0, visibleCount).map((user) => (
+           {show.slice(0, visibleCount).map((user) => (
 
 
 
@@ -52,7 +55,11 @@ const PopularData = () => {
             <p className="text-[14px] flex items-center gap-1"><Calendar size={14} strokeWidth={2} /> {user.premiered?.split("-")[0] || "N/A"}</p>
           </div>
            
-            <button className="mx-auto  block bg-red-400 my-2 py-1.5 px-4 rounded-xl">See Details</button>
+            <button onClick={()=> setModal('çlick') } className="mx-auto  block bg-red-400 my-2 py-1.5 px-4 rounded-xl">See Details</button>
+                    {/* {click && <div className="min-h-160 w-md bg-gray-200 shadow-2xl">
+        <h2 className="text-xl font-extrabold">This is modal</h2>
+
+      </div>} */}
           </div>
 
 
@@ -62,13 +69,14 @@ const PopularData = () => {
      </div>
 
       {visibleCount < show.length && (
-        <button
+        <button type="button"
           onClick={handleShowMore}
           className="my-8 bg-red-600 text-white font-medium py-2 px-6 rounded-xl hover:bg-red-700 transition"
         >
           Show More
         </button>
       )}
+
     </div>
   );
 };
