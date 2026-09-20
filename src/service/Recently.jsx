@@ -62,7 +62,7 @@ const Recently = () => {
               </p>
             </div>
 
-            <button onClick={()=> setModal(user.id) } className="mx-auto  block bg-red-400 my-2 py-1.5 px-4 rounded-xl">
+            <button onClick={()=> setModal(user.id) } className="mx-auto cursor-pointer block bg-red-400 my-2 py-1.5 px-4 rounded-xl">
               See Details
             </button>
 
@@ -88,7 +88,7 @@ const Recently = () => {
 
            <button
           onClick={() => setModal(false)}
-          className="mt-2 bg-red-500 text-white py-2 px-4 rounded-xl text-center mx-auto block w-30"
+          className="mt-2 bg-red-500 text-white cursor-pointer py-2 px-4 rounded-xl text-center mx-auto block w-30"
         >
           Close
         </button>
@@ -102,7 +102,7 @@ const Recently = () => {
       {visibleCount < show.length && (
         <button
           onClick={handleShowMore}
-          className="my-8 bg-red-600 text-white font-medium py-2 px-6 rounded-xl hover:bg-red-700 transition"
+          className="my-8 bg-red-600 cursor-pointer text-white font-medium py-2 px-6 rounded-xl hover:bg-red-700 transition"
         >
           Show More
         </button>

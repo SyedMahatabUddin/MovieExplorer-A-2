@@ -8,7 +8,6 @@ const MainLayout = () => {
 
   const handleSearch = (query) => {
     setSearchQuery(query);
-    console.log("Search query:", query);
   };
 
   return (

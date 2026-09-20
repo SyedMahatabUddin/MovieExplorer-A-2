@@ -45,7 +45,7 @@ export default function Header( {onSearch}) {
           value={searchValue} onChange={(e)=>setSearchValue(e.target.value) }
           placeholder="Search Shows and People "
           className="focus:outline-none pl-3 rounded-l-3xl border-none max-h-10 text-[1.1rem] md:w-60 lg:w-80 w-40 text-gray-600 bg-[#FEFEFE] border"  />
-        <button aria-label="Search" className=" py-2 px-4 rounded-r-3xl text-[1.1rem] max-h-10  bg-[#ff0000] hover:bg-[#97423c]  transition duration-500 ">
+        <button aria-label="Search" className="cursor-pointer py-2 px-4 rounded-r-3xl text-[1.1rem] max-h-10  bg-[#ff0000] hover:bg-[#97423c]  transition duration-500 ">
           <Search color="#ffffff" />
         </button>
    </form>

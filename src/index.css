@@ -1,3 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@keyframes slideIn {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -100%;
+  }
+}

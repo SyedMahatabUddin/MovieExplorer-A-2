@@ -53,8 +53,8 @@ const PopularData = () => {
             <p className="text-[14px] flex items-center gap-1"><Calendar size={14} strokeWidth={2} /> {user.premiered?.split("-")[0] || "N/A"}</p>
           </div>
            
-            <button onClick={()=> setModal(user.id) } className="mx-auto  block bg-red-400 my-2 py-1.5 px-4 rounded-xl">See Details</button>
-        {modal=== user.id && (<div onClick={()=>setModal(true)} className="fixed inset-0 bg-black/50 flex items-center justify-center  px-4 z-50">
+            <button onClick={()=> setModal(user.id) } className="mx-auto cursor-pointer block bg-red-400 my-2 py-1.5 px-4 rounded-xl">See Details</button>
+        {modal=== user.id && (<div onClick={()=>setModal(true)} className=" fixed inset-0 bg-black/50 flex items-center justify-center  px-4 z-50">
           <div onClick={(e)=>e.stopPropagation()} className="w-full max-w-md bg-white shadow-2xl rounded-3xl overflow-hidden space-y-3 pb-6">
           <div className="grid grid-cols-2">
            <img className="row-span-1" src={user.image?.medium} alt="" />
@@ -76,7 +76,7 @@ const PopularData = () => {
 
            <button
           onClick={() => setModal(false)}
-          className="mt-2 bg-red-500 text-white py-2 px-4 rounded-xl text-center mx-auto block w-30"
+          className="cursor-pointer mt-2 bg-red-500 text-white py-2 px-4 rounded-xl text-center mx-auto block w-30"
         >
           Close
         </button>
@@ -93,7 +93,7 @@ const PopularData = () => {
       {visibleCount < show.length && (
         <button type="button"
           onClick={handleShowMore}
-          className="my-8 bg-red-600 text-white font-medium py-2 px-6 rounded-xl hover:bg-red-700 transition"
+          className="cursor-pointer my-8 bg-red-600 text-white font-medium py-2 px-6 rounded-xl hover:bg-red-700 transition"
         >
           Show More
         </button>
